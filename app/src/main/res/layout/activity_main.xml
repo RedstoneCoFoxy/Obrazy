@@ -30,21 +30,21 @@
         app:layout_constraintHorizontal_bias="0.138"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Obrazek"
-        app:layout_constraintVertical_bias="0.002" />
+        app:layout_constraintVertical_bias="0.592" />
 
     <EditText
         android:id="@+id/Obrot"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:autofillHints="@string/obrottext"
         android:ems="10"
         android:inputType="number"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.068"
         app:layout_constraintStart_toEndOf="@+id/CheckWidoczny"
         app:layout_constraintTop_toBottomOf="@+id/Obrazek"
-        android:autofillHints="@string/obrottext"
-        app:layout_constraintVertical_bias="0.036" />
+        app:layout_constraintVertical_bias="0.603" />
 
     <EditText
         android:id="@+id/SkalaX"
@@ -76,4 +76,59 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Obrot"
         app:layout_constraintVertical_bias="0.005" />
+
+    <ImageButton
+        android:id="@+id/ButtonPrev"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="16dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.121"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/SkalaX"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/poprzedni" />
+
+    <ImageButton
+        android:id="@+id/ButtonNext"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="20dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="@+id/ButtonPrev"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/ButtonPrev"
+        app:layout_constraintTop_toTopOf="@+id/ButtonPrev"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/nastepny" />
+
+    <ImageButton
+        android:id="@+id/ButtonClear"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="24dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="@+id/ButtonNext"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.015"
+        app:layout_constraintStart_toEndOf="@+id/ButtonNext"
+        app:layout_constraintTop_toTopOf="@+id/ButtonNext"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/wyczysc" />
+
+    <ImageButton
+        android:id="@+id/ButtonCamera"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="@+id/ButtonClear"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.343"
+        app:layout_constraintStart_toEndOf="@+id/ButtonClear"
+        app:layout_constraintTop_toTopOf="@+id/ButtonClear"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/kamera" />
 </androidx.constraintlayout.widget.ConstraintLayout>
