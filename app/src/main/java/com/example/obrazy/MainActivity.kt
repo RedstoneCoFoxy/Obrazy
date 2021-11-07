@@ -1,18 +1,27 @@
-package com.example.obrazy
-
 import android.R.attr.*
+import android.content.ActivityNotFoundException
+import android.content.Intent
+import android.content.pm.PackageManager
+import android.graphics.Bitmap
 import android.graphics.Matrix
 import android.os.Bundle
+import android.provider.MediaStore
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
+import com.example.obrazy.R
+import java.util.jar.Manifest
 
 
 class MainActivity : AppCompatActivity() {
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         setContentView(R.layout.activity_main)
+
+
         val CheckWidok: CheckBox =findViewById(R.id.CheckWidoczny)
         val Obrazek: ImageView =findViewById(R.id.Obrazek)
 
@@ -49,6 +58,17 @@ class MainActivity : AppCompatActivity() {
             Obrazek.setImageResource(R.drawable.ic_launcher_foreground)
         }
 
+        ButtonCamera.isEnabled=false
+        if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.CAMERA )!=PackageManager.PERMISSION_GRANTED){
+            ActivityCompat.requestPermissions(this, arrayOf(android.Manifest.permission.CAMERA),111)
+        }else{
+            ButtonCamera.isEnabled=true
+        }
+        ButtonCamera.setOnClickListener(){
+            var x = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+            startActivityForResult(x,101)
+        }
+
         CheckWidok.setOnClickListener(){
             if(CheckWidok.isChecked()){
                 Obrazek.setVisibility(View.VISIBLE);
@@ -79,5 +99,20 @@ class MainActivity : AppCompatActivity() {
         }
 
     }
-}
+    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        if(requestCode ==111 && grantResults[0]== PackageManager.PERMISSION_GRANTED)
+        {
+            findViewById<ImageView>(R.id.ButtonCamera).isEnabled=true
+        }
 
+    }
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data:Intent?){
+        super.onActivityResult(requestCode,resultCode,data)
+        if(requestCode==101)
+        {
+            var ObrazKamery  = data?.getParcelableExtra<Bitmap>("data")
+            findViewById<ImageView>(R.id.Obrazek).setImageBitmap(ObrazKamery)
+        }
+    }
+}
