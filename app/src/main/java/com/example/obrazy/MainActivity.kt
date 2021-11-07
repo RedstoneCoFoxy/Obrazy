@@ -44,6 +44,10 @@ class MainActivity : AppCompatActivity() {
             KtoryObraz=KtoryObraz-1
             ZmianaObrazu()
         }
+        ButtonClear.setOnClickListener(){
+            KtoryObraz=0
+            Obrazek.setImageResource(R.drawable.ic_launcher_foreground)
+        }
 
         CheckWidok.setOnClickListener(){
             if(CheckWidok.isChecked()){
