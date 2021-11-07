@@ -16,9 +16,9 @@ class MainActivity : AppCompatActivity() {
 
         CheckWidok.setOnClickListener(){
             if(CheckWidok.isChecked()){
-                Obrazek.setVisibility(View.INVISIBLE);
-            }else{
                 Obrazek.setVisibility(View.VISIBLE);
+            }else{
+                Obrazek.setVisibility(View.INVISIBLE);
             }
         }
 
