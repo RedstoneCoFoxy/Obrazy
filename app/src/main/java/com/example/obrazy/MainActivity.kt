@@ -15,7 +15,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         val CheckWidok: CheckBox =findViewById(R.id.CheckWidoczny);
         val Obrazek: ImageView =findViewById(R.id.Obrazek);
+
         val Obracacz: EditText =findViewById(R.id.Obrot);
+        val SkalaX: EditText =findViewById(R.id.SkalaX);
+        val SkalaY: EditText =findViewById(R.id.SkalaY);
 
         CheckWidok.setOnClickListener(){
             if(CheckWidok.isChecked()){
@@ -25,9 +28,19 @@ class MainActivity : AppCompatActivity() {
             }
         }
         Obracacz.setOnClickListener(){
-            var kat =Obracacz.text;
+            var ScaleY =SkalaY.text.toString().toInt().toFloat();
             Obrazek.setScaleType(ImageView.ScaleType.CENTER_INSIDE)
-            Obrazek.setRotation(kat.toString().toInt().toFloat())
+            Obrazek.setScaleY(ScaleY)
+        }
+        SkalaY.setOnClickListener(){
+            var ScaleY =SkalaY.text.toString().toInt().toFloat();
+            Obrazek.setScaleType(ImageView.ScaleType.CENTER_INSIDE)
+            Obrazek.setScaleY(ScaleY)
+        }
+        SkalaX.setOnClickListener(){
+            var ScaleX =SkalaX.text.toString().toInt().toFloat();
+            Obrazek.setScaleType(ImageView.ScaleType.CENTER_INSIDE)
+            Obrazek.setScaleX(ScaleX)
         }
 
     }

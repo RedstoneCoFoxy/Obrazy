@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Obrazy</string>
     <string name="checktext">Widoczność</string>
+    <string name="obrottext">Obrót</string>
+    <string name="skalaXtext">Skala X</string>
+    <string name="skalaYtext">Skala Y</string>
 </resources>

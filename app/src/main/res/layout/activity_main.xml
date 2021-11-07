@@ -43,5 +43,37 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/CheckWidoczny"
         app:layout_constraintTop_toBottomOf="@+id/Obrazek"
+        android:autofillHints="@string/obrottext"
         app:layout_constraintVertical_bias="0.036" />
+
+    <EditText
+        android:id="@+id/SkalaX"
+        android:layout_width="151dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="24dp"
+        android:ems="10"
+        android:inputType="number"
+        android:autofillHints="@string/skalaXtext"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/SkalaY"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/CheckWidoczny"
+        app:layout_constraintVertical_bias="0.005" />
+
+    <EditText
+        android:id="@+id/SkalaY"
+        android:layout_width="151dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="12dp"
+        android:ems="10"
+        android:inputType="number"
+        android:autofillHints="@string/skalaYtext"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.83"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Obrot"
+        app:layout_constraintVertical_bias="0.005" />
 </androidx.constraintlayout.widget.ConstraintLayout>
