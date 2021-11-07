@@ -28,19 +28,25 @@ class MainActivity : AppCompatActivity() {
             }
         }
         Obracacz.setOnClickListener(){
-            var ScaleY =SkalaY.text.toString().toInt().toFloat();
-            Obrazek.setScaleType(ImageView.ScaleType.CENTER_INSIDE)
-            Obrazek.setScaleY(ScaleY)
+            if(Obracacz.text.toString()!="") {
+                var kat = Obracacz.text.toString().toInt().toFloat();
+                Obrazek.setScaleType(ImageView.ScaleType.CENTER_INSIDE)
+                Obrazek.setRotation(kat)
+            }
         }
         SkalaY.setOnClickListener(){
-            var ScaleY =SkalaY.text.toString().toInt().toFloat();
-            Obrazek.setScaleType(ImageView.ScaleType.CENTER_INSIDE)
-            Obrazek.setScaleY(ScaleY)
+            if(SkalaY.text.toString()!="") {
+                var ScaleY = SkalaY.text.toString().toInt().toFloat();
+                Obrazek.setScaleType(ImageView.ScaleType.CENTER_INSIDE)
+                Obrazek.setScaleY(ScaleY)
+            }
         }
         SkalaX.setOnClickListener(){
-            var ScaleX =SkalaX.text.toString().toInt().toFloat();
-            Obrazek.setScaleType(ImageView.ScaleType.CENTER_INSIDE)
-            Obrazek.setScaleX(ScaleX)
+            if(SkalaX.text.toString()!="") {
+                var ScaleX = SkalaX.text.toString().toInt().toFloat();
+                Obrazek.setScaleType(ImageView.ScaleType.CENTER_INSIDE)
+                Obrazek.setScaleX(ScaleX)
+            }
         }
 
     }
